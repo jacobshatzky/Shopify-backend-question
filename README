@@ -1,0 +1,10 @@
+This is my answer to the shopify back-end question:
+
+I did this in javascript using NodeJS and ExpressJS as the back end. 
+use:
+1. clone/download project, run node app.js in the project directory
+2. goto http://www.localhost:9999/
+3. from there you can see the list inventory, use the input field and buttons.
+4. you can add something to inventort. remove it with check boxes, and update it, as well as export
+  the current inventory items to CSV File. 
+  
