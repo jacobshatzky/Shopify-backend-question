@@ -69,6 +69,7 @@ function checkAmount() {
   let count = 0;
   for (let i = 0; i < boxArray.length; i++) {
     var boxChildren = boxArray[i].childNodes;
+
     if (boxChildren[0].checked == true) {
       count++;
     }
@@ -77,4 +78,25 @@ function checkAmount() {
   if (count != 1) {
     alert("Only select one item to edit!");
   }
+}
+
+function exportToCSV() {
+  let csvArray = [];
+  for (let i = 0; i < boxArray.length; i++) {
+    var boxChildren = boxArray[i].childNodes;
+
+    let newArr = ["Product"];
+    newArr.push(boxChildren[0].id);
+
+    csvArray.push(newArr);
+  }
+
+  console.log(csvArray);
+
+  let csvContent =
+    "data:text/csv;charset=utf-8," +
+    csvArray.map((e) => e.join(",")).join("\n");
+
+  var encodedUri = encodeURI(csvContent);
+  window.open(encodedUri);
 }
